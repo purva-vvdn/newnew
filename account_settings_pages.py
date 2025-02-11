@@ -9,19 +9,15 @@ from selenium.webdriver.common.by import By
 from locators import account_settings
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException, NoSuchElementException, WebDriverException
-
-from locators.account_settings import confirm_email
-
 
 class Edit:
 
-   def __init__(self, driver):
+    def __init__(self, driver):
         self.driver = driver
         self.action = ActionChains(self.driver)
         self.wait = WebDriverWait(self.driver, 60)
 
-  def open_login_page(self):
+     def open_login_page(self):
         self.wait.until(EC.element_to_be_clickable((By.ID, 'button_premium'))).click()
         for attempt in range(3):
             try:
