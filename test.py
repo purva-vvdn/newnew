@@ -1,2 +1,2 @@
-def test1():
+def test1(self):
   print("Hello Word")
